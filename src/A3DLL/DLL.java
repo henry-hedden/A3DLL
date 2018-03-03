@@ -52,6 +52,8 @@
 //                              from Object to generics
 // 2018-03-03              HH            Added instance
 //                            variables and constructor
+// 2018-03-03              HH       Documented instance
+//                            variables and constructor
 package A3DLL;
 
 import java.util.NoSuchElementException;
@@ -63,9 +65,18 @@ import java.util.NoSuchElementException;
  */
 class DLL<T> implements DLLADT<T> {
 
-	private DLLNode<T> head, tail;
+	/** Reference to first element. */
+	private DLLNode<T> head;
+
+	/** Reference to last element. */
+	private DLLNode<T> tail;
+
+	/** Number of elements in list. */
 	private int size;
 
+	/**
+	 * Constructor for Doubly Linked List.
+	 */
 	public DLL() {
 		head = new DLLNode<>();
 		tail = new DLLNode<>();
