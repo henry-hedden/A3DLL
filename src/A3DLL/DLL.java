@@ -84,7 +84,7 @@ class DLL<T> implements DLLADT {
 	 * @throws NoSuchElementException 
 	 */
 	@Override
-	public Object getFirstItem() throws NoSuchElementException {
+	public T getFirstItem() throws NoSuchElementException {
 		//To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
@@ -95,7 +95,7 @@ class DLL<T> implements DLLADT {
 	 * @throws NoSuchElementException 
 	 */
 	@Override
-	public Object getLastItem() throws NoSuchElementException {
+	public T getLastItem() throws NoSuchElementException {
 		//To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
@@ -126,7 +126,7 @@ class DLL<T> implements DLLADT {
 	 * @throws NoSuchElementException 
 	 */
 	@Override
-	public Object removeFirstItem() throws NoSuchElementException {
+	public T removeFirstItem() throws NoSuchElementException {
 		//To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
@@ -137,7 +137,7 @@ class DLL<T> implements DLLADT {
 	 * @throws NoSuchElementException 
 	 */
 	@Override
-	public Object removeLastItem() throws NoSuchElementException {
+	public T removeLastItem() throws NoSuchElementException {
 		//To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
