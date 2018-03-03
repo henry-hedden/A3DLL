@@ -47,6 +47,11 @@
 // 2018-03-03              HH              Created file
 // 2018-03-03              HH     Completed code header
 // 2018-03-03              HH    Added abstract methods
+// 2018-03-03              HH   Documented method stubs
+// 2018-03-03              HH      Changed return types
+//                              from Object to generics
+// 2018-03-03              HH            Added instance
+//                            variables and constructor
 package A3DLL;
 
 import java.util.NoSuchElementException;
@@ -56,7 +61,18 @@ import java.util.NoSuchElementException;
  * {@link DLLADT} interface, using the {@link DLLNode} class.
  * @author Henry Hedden
  */
-class DLL<T> implements DLLADT {
+class DLL<T> implements DLLADT<T> {
+
+	private DLLNode<T> head, tail;
+	private int size;
+
+	public DLL() {
+		head = new DLLNode<>();
+		tail = new DLLNode<>();
+		head.setNextNode(tail);
+		tail.setPrevNode(head);
+		size = 0;
+	}
 
 	/**
 	 * Provide the number of items in the list.
