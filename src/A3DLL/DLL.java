@@ -58,48 +58,84 @@ import java.util.NoSuchElementException;
  */
 class DLL<T> implements DLLADT {
 
+	/**
+	 * Provide the number of items in the list.
+	 * @return size of list (int)
+	 */
 	@Override
 	public int size() {
 		//To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
+	/**
+	 * Is the list empty?
+	 * @return <code>true</code> if empty, otherwise <code>false</code>
+	 */
 	@Override
 	public boolean isEmpty() {
 		//To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
+	/**
+	 * Return the first item without removing it.
+	 * @return first element in list
+	 * @throws NoSuchElementException 
+	 */
 	@Override
 	public Object getFirstItem() throws NoSuchElementException {
 		//To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
+	/**
+	 * Return the last item without removing it.
+	 * @return last element in list
+	 * @throws NoSuchElementException 
+	 */
 	@Override
 	public Object getLastItem() throws NoSuchElementException {
 		//To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
+	/**
+	 * Add an item to the front of the list.
+	 * @param element element to add
+	 */
 	@Override
 	public void insertFirstItem(Object element) {
 		//To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
+	/**
+	 * Add an item to the end of the list.
+	 * @param element element to add
+	 */
 	@Override
 	public void insertLastItem(Object element) {
 		//To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
+	/**
+	 * Remove an item from the front of the list.
+	 * @return first item in list
+	 * @throws NoSuchElementException 
+	 */
 	@Override
 	public Object removeFirstItem() throws NoSuchElementException {
 		//To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
+	/**
+	 * Remove an item from the end of the list.
+	 * @return last item in list
+	 * @throws NoSuchElementException 
+	 */
 	@Override
 	public Object removeLastItem() throws NoSuchElementException {
 		//To change body of generated methods, choose Tools | Templates.
