@@ -58,6 +58,11 @@
 //                            variables and constructor
 // 2018-03-03              HH    Implemented size() and
 //                                    isEmpty() methods
+// 2018-03-03              HH       Updated code header
+//                              with sample output from
+//                    A3DLLTesterIntegerOutput2018.docx
+// 2018-03-03              HH       Implemented methods
+//                     getFirstItem() and getLastItem()
 package A3DLL;
 
 import java.util.NoSuchElementException;
@@ -114,8 +119,9 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public T getFirstItem() throws NoSuchElementException {
-		// To change body of generated methods, choose Tools | Templates.
-		throw new UnsupportedOperationException("Not supported yet.");
+		if (isEmpty())
+			throw new NoSuchElementException("List is empty!");
+		return head.getNextNode().getElement();
 	}
 
 	/**
@@ -125,8 +131,9 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public T getLastItem() throws NoSuchElementException {
-		// To change body of generated methods, choose Tools | Templates.
-		throw new UnsupportedOperationException("Not supported yet.");
+		if (isEmpty())
+			throw new NoSuchElementException("List is empty!");
+		return tail.getPrevNode().getElement();
 	}
 
 	/**
