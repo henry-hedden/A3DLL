@@ -54,6 +54,8 @@
 //                            variables and constructor
 // 2018-03-03              HH       Documented instance
 //                            variables and constructor
+// 2018-03-03              HH    Implemented size() and
+//                                    isEmpty() methods
 package A3DLL;
 
 import java.util.NoSuchElementException;
@@ -65,10 +67,10 @@ import java.util.NoSuchElementException;
  */
 class DLL<T> implements DLLADT<T> {
 
-	/** Reference to first element. */
+	/** Head sentinel node. */
 	private DLLNode<T> head;
 
-	/** Reference to last element. */
+	/** Tail sentinel node. */
 	private DLLNode<T> tail;
 
 	/** Number of elements in list. */
@@ -91,8 +93,7 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public int size() {
-		//To change body of generated methods, choose Tools | Templates.
-		throw new UnsupportedOperationException("Not supported yet.");
+		return size;
 	}
 
 	/**
@@ -101,8 +102,7 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public boolean isEmpty() {
-		//To change body of generated methods, choose Tools | Templates.
-		throw new UnsupportedOperationException("Not supported yet.");
+		return size == 0;
 	}
 
 	/**
