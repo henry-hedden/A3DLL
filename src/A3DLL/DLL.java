@@ -46,13 +46,64 @@
 // ----------------------------------------------------
 // 2018-03-03              HH              Created file
 // 2018-03-03              HH     Completed code header
+// 2018-03-03              HH    Added abstract methods
 package A3DLL;
+
+import java.util.NoSuchElementException;
 
 /**
  * Implements a Doubly Linked List, as defined in the
  * {@link DLLADT} interface, using the {@link DLLNode} class.
  * @author Henry Hedden
  */
-class DLL<T> {
+class DLL<T> implements DLLADT {
+
+	@Override
+	public int size() {
+		//To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	@Override
+	public boolean isEmpty() {
+		//To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	@Override
+	public Object getFirstItem() throws NoSuchElementException {
+		//To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	@Override
+	public Object getLastItem() throws NoSuchElementException {
+		//To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	@Override
+	public void insertFirstItem(Object element) {
+		//To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	@Override
+	public void insertLastItem(Object element) {
+		//To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	@Override
+	public Object removeFirstItem() throws NoSuchElementException {
+		//To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	@Override
+	public Object removeLastItem() throws NoSuchElementException {
+		//To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
 	
 }
