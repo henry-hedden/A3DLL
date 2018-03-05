@@ -63,6 +63,8 @@
 //                    A3DLLTesterIntegerOutput2018.docx
 // 2018-03-03              HH       Implemented methods
 //                     getFirstItem() and getLastItem()
+// 2018-03-05              HH   Changed parameters from
+//                                   Object to generics
 package A3DLL;
 
 import java.util.NoSuchElementException;
@@ -141,7 +143,7 @@ class DLL<T> implements DLLADT<T> {
 	 * @param element element to add
 	 */
 	@Override
-	public void insertFirstItem(Object element) {
+	public void insertFirstItem(T element) {
 		// To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
@@ -151,7 +153,7 @@ class DLL<T> implements DLLADT<T> {
 	 * @param element element to add
 	 */
 	@Override
-	public void insertLastItem(Object element) {
+	public void insertLastItem(T element) {
 		// To change body of generated methods, choose Tools | Templates.
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
