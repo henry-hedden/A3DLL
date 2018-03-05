@@ -67,6 +67,8 @@
 //                                   Object to generics
 // 2018-03-05              HH   Implemented insertFirst
 //                               and insertLast methods
+// 2018-03-05              HH       Implemented methods
+//                   removeFirstItem and removeLastItem
 package A3DLL;
 
 import java.util.NoSuchElementException;
@@ -169,8 +171,10 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public T removeFirstItem() throws NoSuchElementException {
-		// To change body of generated methods, choose Tools | Templates.
-		throw new UnsupportedOperationException("Not supported yet.");
+		DLLNode<T> n = head.getNextNode();
+		head.setNextNode(n.getNextNode());
+		n.getNextNode().setPrevNode(head);
+		return n.getElement();
 	}
 
 	/**
@@ -180,8 +184,10 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public T removeLastItem() throws NoSuchElementException {
-		// To change body of generated methods, choose Tools | Templates.
-		throw new UnsupportedOperationException("Not supported yet.");
+		DLLNode<T> n = tail.getPrevNode();
+		tail.setPrevNode(n.getPrevNode());
+		n.getPrevNode().setNextNode(tail);
+		return n.getElement();
 	}
 	
 }
