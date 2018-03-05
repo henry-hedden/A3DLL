@@ -65,6 +65,8 @@
 //                     getFirstItem() and getLastItem()
 // 2018-03-05              HH   Changed parameters from
 //                                   Object to generics
+// 2018-03-05              HH   Implemented insertFirst
+//                               and insertLast methods
 package A3DLL;
 
 import java.util.NoSuchElementException;
@@ -144,8 +146,9 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public void insertFirstItem(T element) {
-		// To change body of generated methods, choose Tools | Templates.
-		throw new UnsupportedOperationException("Not supported yet.");
+		DLLNode<T> n = new DLLNode<>(element, head, head.getNextNode());
+		head.setNextNode(n);
+		head.getNextNode().setPrevNode(n);
 	}
 
 	/**
@@ -154,8 +157,9 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public void insertLastItem(T element) {
-		// To change body of generated methods, choose Tools | Templates.
-		throw new UnsupportedOperationException("Not supported yet.");
+		DLLNode<T> n = new DLLNode<>(element, tail.getPrevNode(), tail);
+		tail.setPrevNode(n);
+		tail.getPrevNode().setNextNode(n);
 	}
 
 	/**
