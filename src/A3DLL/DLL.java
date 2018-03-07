@@ -72,6 +72,8 @@
 // 2018-03-07              HH    Removed sentinel nodes
 // 2018-03-07              HH   Increment and decrement
 //                    size in insert and remove methods
+// 2018-03-07              HH    Added special case for
+//                         removing from list of size 1
 package A3DLL;
 
 import java.util.NoSuchElementException;
@@ -185,8 +187,13 @@ class DLL<T> implements DLLADT<T> {
 		if (isEmpty())
 			throw new NoSuchElementException("List is empty!");
 		T element = head.getElement();
-		head = head.getNextNode();
-		head.setPrevNode(null);
+		if (size == 1) {
+			head = null;
+			tail = null;
+		} else {
+			head = head.getNextNode();
+			head.setPrevNode(null);
+		}
 		size--;
 		return element;
 	}
@@ -201,8 +208,13 @@ class DLL<T> implements DLLADT<T> {
 		if (isEmpty())
 			throw new NoSuchElementException("List is empty!");
 		T element = tail.getElement();
-		tail = tail.getPrevNode();
-		tail.setNextNode(null);
+		if (size == 1) {
+			head = null;
+			tail = null;
+		} else {
+			tail = tail.getPrevNode();
+			tail.setNextNode(null);
+		}
 		size--;
 		return element;
 		
