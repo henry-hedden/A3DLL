@@ -42,6 +42,29 @@
 // Actual Output:
 // --------------------  
 // 
+// DLLTesterInteger Output:
+// 
+// EMPTY
+// Inserted Last: 11. [11] 
+// Inserted Last: 33. [11] [33] 
+// Inserted Last: 55. [11] [33] [55] 
+// There are  3 items in the list. First:    11. Last:    55. 
+// Removed First: 11. [33] [55] 
+// Removed Last: 55. [33] 
+// There are  1 items in the list. 
+// Is the list empty?  false
+// Inserted First: 22. [22] [33] 
+// Inserted Last: 44. [22] [33] [44] 
+// Inserted First: 66. [66] [22] [33] [44] 
+// There are  4 items in the list. First:    66. Last:    44. 
+// 
+// Removed First Item: 66. [22] [33] [44] 
+// Removed Last Item: 44. [22] [33] 
+// There are  2 items in the list. 
+// Removed First Item: 22. [33] 
+// Removed Last Item: 33. EMPTY
+// Is the list empty?  true
+// 
 //                   Revision History
 // 
 // Date:                   By:                  Action:
@@ -74,6 +97,8 @@
 //                    size in insert and remove methods
 // 2018-03-07              HH    Added special case for
 //                         removing from list of size 1
+// 2018-03-07              HH    Added output to header
+
 package A3DLL;
 
 import java.util.NoSuchElementException;
