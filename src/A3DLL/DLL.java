@@ -69,6 +69,9 @@
 //                               and insertLast methods
 // 2018-03-05              HH       Implemented methods
 //                   removeFirstItem and removeLastItem
+// 2018-03-07              HH    Removed sentinel nodes
+// 2018-03-07              HH   Increment and decrement
+//                    size in insert and remove methods
 package A3DLL;
 
 import java.util.NoSuchElementException;
@@ -80,10 +83,10 @@ import java.util.NoSuchElementException;
  */
 class DLL<T> implements DLLADT<T> {
 
-	/** Head sentinel node. */
+	/** Head node. */
 	private DLLNode<T> head;
 
-	/** Tail sentinel node. */
+	/** Tail node. */
 	private DLLNode<T> tail;
 
 	/** Number of elements in list. */
@@ -93,10 +96,8 @@ class DLL<T> implements DLLADT<T> {
 	 * Constructor for Doubly Linked List.
 	 */
 	public DLL() {
-		head = new DLLNode<>();
-		tail = new DLLNode<>();
-		head.setNextNode(tail);
-		tail.setPrevNode(head);
+		head = null;
+		tail = null;
 		size = 0;
 	}
 
@@ -127,7 +128,7 @@ class DLL<T> implements DLLADT<T> {
 	public T getFirstItem() throws NoSuchElementException {
 		if (isEmpty())
 			throw new NoSuchElementException("List is empty!");
-		return head.getNextNode().getElement();
+		return head.getElement();
 	}
 
 	/**
@@ -139,7 +140,7 @@ class DLL<T> implements DLLADT<T> {
 	public T getLastItem() throws NoSuchElementException {
 		if (isEmpty())
 			throw new NoSuchElementException("List is empty!");
-		return tail.getPrevNode().getElement();
+		return tail.getElement();
 	}
 
 	/**
@@ -148,9 +149,14 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public void insertFirstItem(T element) {
-		DLLNode<T> n = new DLLNode<>(element, head, head.getNextNode());
-		head.setNextNode(n);
-		head.getNextNode().setPrevNode(n);
+		if (isEmpty())
+			head = tail = new DLLNode<>(element, null, null);
+		else {
+			DLLNode<T> n = new DLLNode<>(element, null, head);
+			head.setPrevNode(n);
+			head = n;
+		}
+		size++;
 	}
 
 	/**
@@ -159,9 +165,14 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public void insertLastItem(T element) {
-		DLLNode<T> n = new DLLNode<>(element, tail.getPrevNode(), tail);
-		tail.setPrevNode(n);
-		tail.getPrevNode().setNextNode(n);
+		if (isEmpty())
+			head = tail = new DLLNode<>(element, null, null);
+		else {
+			DLLNode<T> n = new DLLNode<>(element, tail, null);
+			tail.setNextNode(n);
+			tail = n;
+		}
+		size++;
 	}
 
 	/**
@@ -171,10 +182,13 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public T removeFirstItem() throws NoSuchElementException {
-		DLLNode<T> n = head.getNextNode();
-		head.setNextNode(n.getNextNode());
-		n.getNextNode().setPrevNode(head);
-		return n.getElement();
+		if (isEmpty())
+			throw new NoSuchElementException("List is empty!");
+		T element = head.getElement();
+		head = head.getNextNode();
+		head.setPrevNode(null);
+		size--;
+		return element;
 	}
 
 	/**
@@ -184,10 +198,31 @@ class DLL<T> implements DLLADT<T> {
 	 */
 	@Override
 	public T removeLastItem() throws NoSuchElementException {
-		DLLNode<T> n = tail.getPrevNode();
-		tail.setPrevNode(n.getPrevNode());
-		n.getPrevNode().setNextNode(tail);
-		return n.getElement();
+		if (isEmpty())
+			throw new NoSuchElementException("List is empty!");
+		T element = tail.getElement();
+		tail = tail.getPrevNode();
+		tail.setNextNode(null);
+		size--;
+		return element;
+		
+	}
+	
+	/**
+	 * Creates a String representing the contents of the array.
+	 * Format: [N1] [N2] [N3] ...
+	 * @return String containing every element in order
+	 */
+	public String toString() {
+		if (isEmpty())
+			return "EMPTY";
+		DLLNode<T> n = head;
+		String s = new String();
+		do {
+			s += String.format("[%s] ", n.getElement());
+			n = n.getNextNode();
+		} while (n != null);
+		return s;
 	}
 	
 }
