@@ -98,6 +98,7 @@
 // 2018-03-07              HH    Added special case for
 //                         removing from list of size 1
 // 2018-03-07              HH    Added output to header
+// 2018-03-07              HH     Fixed toString method
 
 package A3DLL;
 
@@ -251,10 +252,10 @@ class DLL<T> implements DLLADT<T> {
 	 * @return String containing every element in order
 	 */
 	public String toString() {
+		String s = "The DLL looks like this:  ";
 		if (isEmpty())
-			return "EMPTY";
+			return s + "EMPTY";
 		DLLNode<T> n = head;
-		String s = new String();
 		do {
 			s += String.format("[%s] ", n.getElement());
 			n = n.getNextNode();
